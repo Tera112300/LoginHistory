@@ -1,2 +1,2 @@
-Movable Type7プラグイン
+## Movable Type7プラグイン
 ログイン時IP記録
