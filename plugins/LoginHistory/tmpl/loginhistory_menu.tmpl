@@ -1,0 +1,28 @@
+<mt:setvarblock name="page_title">ログイン履歴確認</mt:setvarblock>
+<mt:setvarblock name="page_content">
+<div id="panel">
+<table class="table mt-table">
+    <thead>
+        <tr>
+            <th class="mt-table__control">ID</th>
+            <th class="mt-table__control">IPアドレス</th>
+            <th class="mt-table__control">ログイン日時</th>
+        </tr>
+    </thead>
+    <tbody>
+    <mt:Loop name="history" sort_by="value id reverse">
+        <tr>
+            <td><mt:Var name="id"></td>
+            <td><mt:Var name="ipaddress"></td>
+            <td><$mt:Date ts="$created" format="%Y年%m月%d日%H:%I:%S"$></td>
+        </tr>
+     </mt:Loop>
+    </tbody>
+</table>
+</div>
+<link rel="stylesheet" href="<$mt:StaticWebPath$>plugins/LoginHistory/css/history.css">
+<script type="text/javascript" src="<$mt:StaticWebPath$>plugins/LoginHistory/js/paginathing.min.js"></script>
+<script type="text/javascript" src="<$mt:StaticWebPath$>plugins/LoginHistory/js/history.js"></script>
+</mt:setvarblock>
+<mt:include name="layout/default.tmpl">
+<mt:var name="layout">
